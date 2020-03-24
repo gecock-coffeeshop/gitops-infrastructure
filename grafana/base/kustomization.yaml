@@ -1,0 +1,4 @@
+resources:
+  - clusterroles.yaml
+  - grafana.yaml
+  - operator-subscription.yaml

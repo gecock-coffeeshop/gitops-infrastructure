@@ -19,10 +19,6 @@ kind: ClusterRoleBinding
 metadata:
   name: grafana-operator-namespaces-clusterrolebinding
 roleRef:
-  name: grafana-operator-namespaces-clusterrole
-  kind: ClusterRole
   apiGroup: ""
-subjects:
-  - kind: ServiceAccount
-    name: grafana-operator
-    namespace: coffeeshop-monitoring
+  kind: ClusterRole
+  name: grafana-operator-namespaces-clusterrole
