@@ -14,9 +14,6 @@ metadata:
 spec:
   replicas: 1
   serviceAccountName: prometheus-serviceaccount
-  serviceMonitorSelector:
-    matchLabels:
-      app: strimzi
   additionalScrapeConfigs:
     name: prometheus-config-secrets
     key: prometheus-additional-config.yaml
