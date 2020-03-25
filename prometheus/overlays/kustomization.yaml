@@ -1,2 +1,5 @@
 bases:
   - ../base
+
+patches:
+  - prometheus-patch.yaml

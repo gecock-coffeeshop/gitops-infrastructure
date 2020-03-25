@@ -17,9 +17,6 @@ spec:
   serviceMonitorSelector:
     matchLabels:
       app: strimzi
-  serviceMonitorNamespaceSelector:
-    matchNames:
-      - coffeeshop
   additionalScrapeConfigs:
     name: prometheus-config-secrets
     key: prometheus-additional-config.yaml
