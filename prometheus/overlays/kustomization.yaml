@@ -3,3 +3,4 @@ bases:
 
 patches:
   - prometheus-patch.yaml
+  - clusterrolebinding-patch.yaml

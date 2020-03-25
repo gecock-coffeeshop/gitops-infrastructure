@@ -4,4 +4,4 @@ metadata:
   name: coffeeshop-operator-group
 spec:
   targetNamespaces:
-  - coffeeshop-monitoring
+    - coffeeshop-monitoring
