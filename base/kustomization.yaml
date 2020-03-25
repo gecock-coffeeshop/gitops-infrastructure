@@ -1,6 +1,8 @@
 resources:
   - namespace.yaml
+  - monitoring-operator-group.yaml
 
 bases:
-  - ./apps/overlays
-  - ./monitoring/overlays
+  - ./grafana/overlays
+  - ./operators/overlays
+  - ./prometheus/overlays

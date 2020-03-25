@@ -1,7 +1,8 @@
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  name: coffeeshop-operator-group
+  name: monitoring-operator-group
+  namespace: coffeeshop-monitoring
 spec:
   targetNamespaces:
     - coffeeshop-monitoring

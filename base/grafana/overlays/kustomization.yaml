@@ -2,5 +2,6 @@ bases:
   - ../base
 
 patches:
-  - prometheus-patch.yaml
   - clusterrolebinding-patch.yaml
+
+namespace: coffeeshop-monitoring

@@ -2,6 +2,7 @@ bases:
   - ../base
 
 patches:
-  - operator-group-patch.yaml
+  - prometheus-patch.yaml
+  - clusterrolebinding-patch.yaml
 
 namespace: coffeeshop-monitoring

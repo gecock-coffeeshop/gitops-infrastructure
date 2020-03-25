@@ -1,9 +1,10 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: grafana-operator
+  name: prometheus-operator
+  namespace: coffeeshop-monitoring
 spec:
-  channel: alpha
-  name: grafana-operator
+  channel: beta
+  name: prometheus
   source: community-operators 
   sourceNamespace: openshift-marketplace 

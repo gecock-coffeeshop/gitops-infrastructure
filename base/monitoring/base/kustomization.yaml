@@ -1,6 +1,0 @@
-resources:
-  - operator-group.yaml
-
-bases:
-  - ./grafana/overlays
-  - ./prometheus/overlays

@@ -2,4 +2,3 @@ resources:
   - clusterroles.yaml
   - grafana.yaml
   - cluster-service-version.yaml
-  - operator-subscription.yaml

@@ -1,5 +1,0 @@
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
-metadata:
-  name: appsody-operator
-  namespace: openshift-operators

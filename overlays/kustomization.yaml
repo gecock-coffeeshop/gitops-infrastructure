@@ -1,2 +1,5 @@
 bases:
   - ../base
+
+patches:
+  - monitoring-operator-group-patch.yaml
