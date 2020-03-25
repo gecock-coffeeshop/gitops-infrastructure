@@ -1,0 +1,7 @@
+resources:
+  - namespace.yaml
+  - operator-group.yaml
+
+bases:
+  - ../grafana/overlays
+  - ../prometheus/overlays
