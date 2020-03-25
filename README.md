@@ -3,17 +3,6 @@
 ## Kustomize
 
 * `kubectl apply -k overlays`
-* After the operators have installed, you will need to update the grafana operator to watch for dashboards in other namespaces:
-  * Select the Grafana Operator in the Installed Operators page and navigate to YAML.
-  * In the container args found under the following path `spec.install.spec.deployments.spec.template.spec.containers.args`, add the `--scan-all` flag.
-  * The `args` should now look similar to the following:
-    ```yaml
-    args:
-        - '--grafana-image=quay.io/openshift/origin-grafana'
-        - '--grafana-image-tag=4.2'
-        - '--scan-all'
-    ```
-* You may need to restart the `grafana-deployment` pod to pick up the changes to the operator.
 * You can now view the dashboard.
      * On OpenShift go to 'Networking -> Routes' and select the `coffeeshop-monitoring` project.
      * There should be a `grafana-route`. Select the link to the dashboard location.
