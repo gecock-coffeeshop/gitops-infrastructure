@@ -1,0 +1,4 @@
+bases:
+  - ./appsody/overlays
+  - ./strimzi/overlays
+  - ./service-binding/overlays

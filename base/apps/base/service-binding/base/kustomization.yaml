@@ -1,0 +1,3 @@
+resources:
+  - operator-source.yaml
+  - operator-subscription.yaml
