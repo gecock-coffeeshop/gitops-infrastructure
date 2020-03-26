@@ -4,5 +4,6 @@ metadata:
   name: monitoring-operator-group
   namespace: coffeeshop-monitoring
 spec:
+  # Support for listing more than one namespace will likely be removed in future.
   targetNamespaces:
     - coffeeshop-monitoring
