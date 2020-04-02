@@ -2,7 +2,9 @@
 
 ## Apply with Kustomize
 
+* `kubectl apply -k operators/overlays`
 * `kubectl apply -k overlays`
+* `kubectl apply -k monitoring/overlays`
 
 ## Monitoring
 

@@ -1,6 +1,3 @@
-resources:
-  - monitoring-operator-group.yaml
-
 bases:
   - ./grafana/overlays
   - ./operators/overlays
