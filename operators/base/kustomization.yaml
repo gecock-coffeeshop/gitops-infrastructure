@@ -1,0 +1,6 @@
+resources:
+  - namespace.yaml
+  - appsody-subscription.yaml
+  - service-binding-operator-source.yaml
+  - service-binding-subscription.yaml
+  - strimzi-subscription.yaml

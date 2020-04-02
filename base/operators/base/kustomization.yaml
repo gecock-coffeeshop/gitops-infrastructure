@@ -1,7 +1,3 @@
 resources:
-  - appsody-subscription.yaml
   - grafana-subscription.yaml
   - prometheus-subscription.yaml
-  - service-binding-operator-source.yaml
-  - service-binding-subscription.yaml
-  - strimzi-subscription.yaml
