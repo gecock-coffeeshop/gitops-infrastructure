@@ -1,7 +1,0 @@
-bases:
-  - ../base
-
-patches:
-  - clusterrolebinding-patch.yaml
-
-namespace: coffeeshop-monitoring

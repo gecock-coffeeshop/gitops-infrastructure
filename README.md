@@ -2,8 +2,10 @@
 
 ## Apply with Kustomize
 
+Apply the operator components.
 * `kubectl apply -k operators/overlays`
-* `kubectl apply -k overlays`
+
+Once the operators have finished deploying, you can apply the monitoring components.
 * `kubectl apply -k monitoring/overlays`
 
 ## Monitoring

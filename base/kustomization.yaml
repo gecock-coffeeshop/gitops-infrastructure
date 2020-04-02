@@ -1,3 +1,0 @@
-bases:
-  - ./grafana/overlays
-  - ./operators/overlays
