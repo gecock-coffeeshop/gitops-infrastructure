@@ -1,3 +1,2 @@
 resources:
   - grafana-subscription.yaml
-  - prometheus-subscription.yaml

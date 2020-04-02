@@ -5,3 +5,4 @@ resources:
   - service-binding-operator-source.yaml
   - service-binding-subscription.yaml
   - strimzi-subscription.yaml
+  - prometheus-subscription.yaml
