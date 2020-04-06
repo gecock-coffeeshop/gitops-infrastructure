@@ -1,9 +1,10 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: prometheus
+  name: service-binding-operator
+  namespace: openshift-operators
 spec:
-  channel: beta
-  name: prometheus
+  channel: alpha
+  name: service-binding-operator
   source: community-operators 
   sourceNamespace: openshift-marketplace 

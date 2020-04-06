@@ -4,6 +4,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
   name: grafana-operator.v2.0.0
+  namespace: coffeeshop-monitoring
 spec:
   customresourcedefinitions:
     owned:

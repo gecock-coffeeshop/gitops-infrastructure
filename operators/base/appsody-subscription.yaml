@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: appsody-operator
+  namespace: openshift-operators
+spec:
+  channel: beta
+  name: appsody-operator-certified
+  source: certified-operators 
+  sourceNamespace: openshift-marketplace 

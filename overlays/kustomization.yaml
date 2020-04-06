@@ -1,7 +1,0 @@
-bases:
-  - ../base
-
-patches:
-  - operator-group-patch.yaml
-
-namespace: coffeeshop-monitoring

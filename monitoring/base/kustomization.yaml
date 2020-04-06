@@ -1,0 +1,5 @@
+bases:
+  - ./prometheus/overlays
+  - ./grafana/overlays
+
+namespace: coffeeshop-monitoring

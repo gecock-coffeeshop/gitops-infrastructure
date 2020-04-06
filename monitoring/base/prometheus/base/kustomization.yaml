@@ -2,4 +2,3 @@ resources:
   - clusterroles.yaml
   - prometheus.yaml
   - config-secret.yaml
-  - operator-subscription.yaml
