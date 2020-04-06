@@ -7,5 +7,5 @@ resources:
   - strimzi-subscription.yaml
   - prometheus-subscription.yaml
   - grafana-subscription.yaml
-  - clusterroles.yaml
-  - cluster-service-version.yaml
+  - grafana-clusterroles.yaml
+  - grafana-cluster-service-version.yaml

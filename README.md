@@ -5,6 +5,9 @@
 Apply the operator components.
 * `kubectl apply -k operators/overlays`
 
+You can check the status of the operators using the following command.
+* `oc get clusterserviceversion -n coffeeshop-monitoring`
+
 Once the operators have finished deploying, you can apply the monitoring components.
 * `kubectl apply -k monitoring/overlays`
 
