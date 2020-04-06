@@ -9,3 +9,4 @@ resources:
   - grafana-subscription.yaml
   - grafana-clusterroles.yaml
   - grafana-cluster-service-version.yaml
+  - pipelines-subscription.yaml
