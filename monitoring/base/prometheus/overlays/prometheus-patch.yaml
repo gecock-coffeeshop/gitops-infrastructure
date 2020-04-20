@@ -2,12 +2,10 @@ apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
   name: prometheus
-  labels:
-    app: strimzi
 spec:
   serviceMonitorSelector:
     matchLabels:
-      app: strimzi
+      app: prometheus
   serviceMonitorNamespaceSelector:
-    matchNames:
-      - coffeeshop
+    matchLabels:
+      monitoring: enabled
