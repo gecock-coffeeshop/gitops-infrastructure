@@ -6,6 +6,7 @@ resources:
   - service-binding-subscription.yaml
   - strimzi-subscription.yaml
   - prometheus-subscription.yaml
+  - prometheus-cluster-service-version.yaml
   - grafana-subscription.yaml
   - grafana-clusterroles.yaml
   - grafana-cluster-service-version.yaml

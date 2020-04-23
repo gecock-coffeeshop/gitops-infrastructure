@@ -7,3 +7,4 @@ spec:
   # Support for listing more than one namespace will likely be removed in future.
   targetNamespaces:
     - coffeeshop-monitoring
+    - coffeeshop
