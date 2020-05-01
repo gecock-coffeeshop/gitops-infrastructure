@@ -1,4 +1,0 @@
-resources:
-  - clusterroles.yaml
-  - prometheus.yaml
-  - config-secret.yaml
