@@ -1,0 +1,6 @@
+bases:
+  - ../base
+
+patches:
+  - monitoring-operator-group-patch.yaml
+  - grafana-clusterrolebinding-patch.yaml
