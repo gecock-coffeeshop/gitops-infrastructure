@@ -1,6 +1,3 @@
 bases:
+  - ../../operators-icpa/base
   - ../base
-
-patches:
-  - monitoring-operator-group-patch.yaml
-  - clusterrolebinding-patch.yaml
