@@ -1,0 +1,3 @@
+resources:
+  - appsody-subscription.yaml
+  - pipelines-subscription.yaml
