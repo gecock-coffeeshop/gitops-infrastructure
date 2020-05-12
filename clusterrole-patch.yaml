@@ -1,0 +1,4 @@
+subjects:
+  - kind: ServiceAccount
+    name: grafana-operator
+    namespace: coffeeshop-monitoring
