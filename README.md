@@ -22,7 +22,7 @@ After applying the contents of this repository, you can view the dashboard as fo
 
 
 
-<!-- ------------------- TEST ------------------- -->
+# Testing Monitoring Tech Preview
 <!-- TODO: Test using OperaturHub one instead of own deployment -->
 <!-- TODO: Deploy from Github rather than cloned copy -->
 1. Using own, add scan-all flag to operator deployment and change namespace from default to coffeeshop-monitoring in clusterrole binding.
