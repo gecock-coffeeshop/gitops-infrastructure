@@ -25,7 +25,6 @@ After applying the contents of this repository, you can view the dashboard as fo
 # Testing Monitoring Tech Preview
 <!-- TODO: Test using OperaturHub one instead of own deployment (6.5.1) -->
 <!-- TODO: Deploy from Github rather than cloned copy -->
-1. Using own, add scan-all flag to operator deployment and change namespace from default to coffeeshop-monitoring in clusterrole binding.
 1. Deploy
    * `kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds/Grafana.yaml`
    * `kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds/GrafanaDashboard.yaml`
@@ -37,7 +36,7 @@ After applying the contents of this repository, you can view the dashboard as fo
    * `kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/service_account.yaml -n coffeeshop-monitoring`
    * `kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/operator.yaml -n coffeeshop-monitoring`
    * `kubectl patch deployment grafana-operator -n coffeeshop-monitoring --patch "$(cat operator-patch.yaml)"`
-   * `kubectl patch clusterrolebinding grafana-operator --patch "$(cat clusterrole-patch.yaml)"`
+   * `kubectl patch clusterrolebinding grafana-operator --patch "$(cat clusterrolebinding-patch.yaml)"`
 1. Get Token <!-- Try using specific permissions and convert steps into yaml -->
    * `oc -n coffeeshop-monitoring create sa prometheus-reader`
    * `oc -n coffeeshop-monitoring adm policy add-cluster-role-to-user view -z prometheus-reader`
