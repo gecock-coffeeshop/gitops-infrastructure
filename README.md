@@ -45,7 +45,12 @@ After applying the contents of this repository, you can view the dashboard as fo
 1. Update GrafanaDataSource with token from above.
 1. `kubectl apply -k monitoring/overlays`
 1. When finished testing, delete grafana as following:
-   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds`
-   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles -n coffeeshop-monitoring`
-   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/cluster_roles`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds/Grafana.yaml`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds/GrafanaDashboard.yaml`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/crds/GrafanaDataSource.yaml`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/cluster_roles/cluster_role_binding_grafana_operator.yaml`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/cluster_roles/cluster_role_grafana_operator.yaml`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/role.yaml -n coffeeshop-monitoring`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/role_binding.yaml -n coffeeshop-monitoring`
+   * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/service_account.yaml -n coffeeshop-monitoring`
    * `kubectl delete -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/operator.yaml -n coffeeshop-monitoring`
