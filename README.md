@@ -11,9 +11,7 @@
    * `./deploy-grafana.sh coffeeshop-monitoring`
 1. You can check the status of the operators using the following command.
    * `oc get csv -n coffeeshop-monitoring`
-1. Create a service account for Grafana to authenticate Prometheus and retrieve token.
-   * `oc -n coffeeshop-monitoring create sa prometheus-reader`
-   * `oc -n coffeeshop-monitoring adm policy add-cluster-role-to-user view -z prometheus-reader`
+1. Retrieve the service account token from the prometheus reader.
    * `oc -n  coffeeshop-monitoring serviceaccounts get-token prometheus-reader`
 1. Update the GrafanaDataSource in `monitoring\base\grafana\base\grafana.yaml` with the token from the previous step.
 1. Once the operators have finished deploying, you can apply the monitoring components.

@@ -2,3 +2,4 @@ resources:
   - namespace.yaml
   - service-binding-subscription.yaml
   - strimzi-subscription.yaml
+  - prometheus-reader-serviceaccount.yaml
