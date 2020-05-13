@@ -1,5 +1,5 @@
 bases:
-  - ./prometheus/overlays
   - ./grafana/overlays
 
-namespace: coffeeshop-monitoring
+resources:
+  - cluster-monitoring-config.yaml

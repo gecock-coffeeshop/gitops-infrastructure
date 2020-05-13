@@ -2,17 +2,20 @@
 
 ## Apply with Kustomize
 
-Apply the operator components. Depending on your cluster, you will need to apply different operators.  
-* ICPA OpenShift cluster:  
-`kubectl apply -k operators-icpa`  
-* Empty OpenShift cluster:  
-`kubectl apply -k operators-openshift`
-
-You can check the status of the operators using the following command.
-* `oc get csv -n coffeeshop-monitoring`
-
-Once the operators have finished deploying, you can apply the monitoring components.
-* `kubectl apply -k monitoring`
+1. Apply the operator components. Depending on your cluster, you will need to apply different operators.  
+   * ICPA OpenShift cluster:  
+   `kubectl apply -k operators-icpa`  
+   * Empty OpenShift cluster:  
+   `kubectl apply -k operators-openshift`
+1. Deploy the Grafana operator from the Grafana GitHub:
+   * `./deploy-grafana.sh coffeeshop-monitoring`
+1. You can check the status of the operators using the following command.
+   * `oc get csv -n coffeeshop-monitoring`
+1. Retrieve the service account token from the prometheus reader.
+   * `oc -n  coffeeshop-monitoring serviceaccounts get-token prometheus-reader`
+1. Update the GrafanaDataSource in `monitoring\base\grafana\base\grafana.yaml` with the token from the previous step.
+1. Once the operators have finished deploying, you can apply the monitoring components.
+   * `kubectl apply -k monitoring`
 
 ## Monitoring
 
@@ -30,7 +33,9 @@ After applying the contents of this repository, you can view the dashboard as fo
   * ICPA OpenShift cluster:  
   `kubectl delete -k operators-icpa`  
   * Empty OpenShift cluster:  
-  `kubectl delete -k operators-openshift`  
+  `kubectl delete -k operators-openshift` 
+* Delete the Grafana operator and its components using the Grafana GitHub yamls:
+   * `./delete-grafana.sh coffeeshop-monitoring`
 * Delete the remaining CSVs. As we are using global subscription, some CSVs may remain in your cluster. You will need to delete the source CSV present in the openshift-operators namespace which will remove the other CSVs in the other namespaces as well.
   * In the case where you may have other operators outside this projects installation, identify any exisiting subscriptions. You will want to remove the CSVs where there is no subscription:  
   `kubectl get subscription -n openshift-operators`
