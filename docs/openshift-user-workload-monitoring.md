@@ -16,7 +16,7 @@ The components are spread out across multiple repositories:
 ## Pre-requisites
 
 * OpenShift 4.4 cluster
-* Assumption that you have a `coffeeshop-monitoring` and `coffeeshop` namespace similar to the coffeeshop scenario.
+* Assumption that you are using the coffeeshop scenarion and have a `coffeeshop-monitoring` and `coffeeshop` namespace similar to the coffeeshop scenario.
 
 ## Setup Application Monitoring
 
@@ -34,7 +34,7 @@ This setup will focus on the coffeeshop-ui service but the steps will generally 
     ```xml
     <quickStartSecurity userName="admin" userPassword="password" />
     ```
-1. Create a secret.yaml which contains the credentials from above so that Prometheus can scrape the metrics:
+1. Create a Secret which contains the credentials from above so that Prometheus can scrape the metrics:
     ```yaml
     apiVersion: v1
     kind: Secret
