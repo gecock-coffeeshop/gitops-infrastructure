@@ -20,7 +20,7 @@ The components are spread out across multiple repositories:
 
 ## Setup Application Monitoring
 
-This setup will focus on the coffeeshop-ui service but the steps will generally be similar across the other microservices, ie turn on monitoring, handle any relevant configuration and create a ServiceMonitor.
+This setup will focus on the coffeeshop-ui service but the steps will generally be similar across the other microservices, i.e. turn on monitoring, handle any relevant configuration and create a ServiceMonitor.
 
 ### Coffeeshop-UI Repository
 
