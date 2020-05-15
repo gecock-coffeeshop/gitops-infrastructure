@@ -98,7 +98,7 @@ Now that you have setup the service itself for monitoring, you will need to conf
     ```
 1. Install the Grafana Operator and the CRDs into your cluster:
     * The steps to install Grafana are listed in their <a href="https://github.com/integr8ly/grafana-operator/blob/master/documentation/deploy_grafana.md#manual-procedure">repository</a> or take a look at the <a href="../install-grafana.sh">install-grafana.sh</a> which deploys and patches all the required resources.
-    * If you install Grafana manually from their repository as listed in their documentation, you will need to patch the `grafana-operator` deployment to be able to watch all namespaces to find the relevant service's dashboards. Either use kubectl as used in the install file mentioned above or if you cloned the Grafana repository, you will need to add the following argument in the container:
+    * If you install Grafana manually from their repository as described in their documentation, you will need to patch the `grafana-operator` deployment to be able to watch all namespaces to find the relevant service's dashboards. You can use `kubectl` as shown in the install script mentioned above. Alternatively, if you cloned the Grafana repository, you will need to add the following argument in the container:
         ```yaml
         args:
           - '--scan-all'
