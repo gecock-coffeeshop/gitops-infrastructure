@@ -144,7 +144,7 @@ Now that you have setup the service itself for monitoring, you will need to conf
     ```
     I have found several guides online that mention giving view permission for all the resources within the cluster to this ServiceAccount but I have found this was not necessary, at least for the current stage of the coffeeshop application. This may change as the application and monitoring requirements evolve.
 1. Now that we have a ServiceAccount for Grafana to authenticate with Prometheus, we can add a GrafanaDataSource:
-    * Retrieve the token from the ServiceAccount that we created earlier. You can navigate to the ServiceAccount on OpenShift or use the following command to get it:  
+    * Retrieve the token from the ServiceAccount that we created earlier. You can navigate to the ServiceAccount in the OpenShift Console, or use the following command to get it:  
     `oc -n coffeeshop-monitoring serviceaccounts get-token prometheus-reader`
     * Create the GrafanaDataSource and replace `[TOKEN]` with the one we got in the previous step.
     ```yaml
