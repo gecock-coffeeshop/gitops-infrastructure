@@ -133,7 +133,7 @@ Now that you have setup the service itself for monitoring, you will need to conf
     **security**  
     This section contains the admin username and password. When you login with these credentials, Grafana will prompt you to change your password.  
     **dashboardLabelSelector**  
-    The selector will find the dashboards based on the criteria across all namespaces. The argument that we updated earlier inside the container of the Grafana-operator deployment enables the searching across all namespaces.
+    The selector will find the dashboards based on the criteria across all namespaces. The argument that we updated earlier inside the container of the Grafana-operator deployment enables searching across all namespaces.
 1. Before we continue adding the GrafanaDataSource, we will need a ServiceAccount for Grafana to use to authenticate against the user Workload Prometheus:
     ```yaml
     apiVersion: v1
