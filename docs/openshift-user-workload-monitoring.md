@@ -16,7 +16,7 @@ The components are spread out across multiple repositories:
 ## Pre-requisites
 
 * OpenShift 4.4 cluster
-* Assumption that you are using the coffeeshop scenarion and have a `coffeeshop-monitoring` and `coffeeshop` namespace similar to the coffeeshop scenario.
+* Assumption that you are using the coffeeshop scenario and have a `coffeeshop-monitoring` and `coffeeshop` namespace similar to the coffeeshop scenario.
 
 ## Setup Application Monitoring
 
