@@ -10,7 +10,7 @@ The components are spread out across multiple repositories:
     Installs Grafana and enables the user workload monitoring on OpenShift.
 * **gitops-dev**  
     Contains the Grafana dashboards and the relevant deploy files for the microservices, e.g. `app-deploy.yaml` and ServiceMonitors for monitoring.
-* **The microservices themselves, eg coffeeshop-ui**  
+* **The microservices themselves, e.g. coffeeshop-ui**  
     Enables the monitoring for the microservices if necessary and contains the necessary deploy files.
 
 ## Pre-requisites
