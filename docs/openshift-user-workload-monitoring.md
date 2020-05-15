@@ -30,7 +30,7 @@ This setup will focus on the coffeeshop-ui service but the steps will generally 
         <feature>mpMetrics-2.2</feature>
         <feature>monitor-1.0</feature>
         ```
-1. Configure OpenLiberty security. We are using the plaintext configuration for this which is only used for demonstration purposes. Add the following in the `server.xml` inside the `<server>` tags:
+1. Configure OpenLiberty security. We use quick-start security with the password in plaintext. This configuration is only used for demonstration purposes and is not suitable for production use. Add the following to `src/main/liberty/config/server.xml` inside the `<server>` tags:
     ```xml
     <quickStartSecurity userName="admin" userPassword="password" />
     ```
