@@ -25,7 +25,7 @@ This setup will focus on the coffeeshop-ui service but the steps will generally 
 ### Coffeeshop-UI Repository
 
 1. Turn on monitoring in the coffeeshop-ui service:
-    * In the `server.xml`, add the following in the `featureManager`:
+    * In `src/main/liberty/config/server.xml`, add the following to the `featureManager` tag:
         ```xml
         <feature>mpMetrics-2.2</feature>
         <feature>monitor-1.0</feature>
