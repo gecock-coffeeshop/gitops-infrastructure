@@ -1,4 +1,3 @@
 resources:
   - grafana.yaml
   - clusterroles.yaml
-  - prometheus-reader-serviceaccount.yaml
