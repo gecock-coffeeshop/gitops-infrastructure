@@ -29,13 +29,13 @@ After applying the contents of this repository, you can view the dashboard as fo
 ## Uninstalling the infrastructure
 
 * `kubectl delete -k monitoring`
+* Delete the Grafana operator and its components using the Grafana GitHub yamls:
+   * `./delete-grafana.sh coffeeshop-monitoring`
 * Delete the operators. You will need to delete different operators depending on your cluster:
   * ICPA OpenShift cluster:  
   `kubectl delete -k operators-icpa`  
   * Empty OpenShift cluster:  
   `kubectl delete -k operators-openshift` 
-* Delete the Grafana operator and its components using the Grafana GitHub yamls:
-   * `./delete-grafana.sh coffeeshop-monitoring`
 * Delete the remaining CSVs. As we are using global subscription, some CSVs may remain in your cluster. You will need to delete the source CSV present in the openshift-operators namespace which will remove the other CSVs in the other namespaces as well.
   * In the case where you may have other operators outside this projects installation, identify any exisiting subscriptions. You will want to remove the CSVs where there is no subscription:  
   `kubectl get subscription -n openshift-operators`
