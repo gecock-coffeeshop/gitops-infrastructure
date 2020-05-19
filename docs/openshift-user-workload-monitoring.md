@@ -1,13 +1,13 @@
-# OpenShift User Workload Monitoring
+# OpenShift Monitoring
 
-OpenShift offers an out of the box solution to monitor your application. At time of writing, this feature is in tech preview so there may be some changes in future.
+OpenShift offers its own configured Prometheus to monitor cluster components as well as a tech preview feature to monitor your own services.
 
 This guide will explain how monitoring is set up for the coffeeshop application. 
 
 The components are spread out across multiple repositories:
 
 * **gitops-infrastructure**  
-    Installs Grafana and enables the user workload monitoring on OpenShift.
+    Installs Grafana and enables monitoring your own services on OpenShift.
 * **gitops-dev**  
     Contains the Grafana dashboards and the relevant deploy files for the microservices, e.g. `app-deploy.yaml` and ServiceMonitors for monitoring.
 * **The microservices themselves, e.g. coffeeshop-ui**  
@@ -134,7 +134,7 @@ Now that you have setup the service itself for monitoring, you will need to conf
     This section contains the admin username and password. When you login with these credentials, Grafana will prompt you to change your password.  
     **dashboardLabelSelector**  
     The selector will find the dashboards based on the criteria across all namespaces. The argument that we updated earlier inside the container of the Grafana-operator deployment enables searching across all namespaces.
-1. Before we continue adding the GrafanaDataSource, we will need a ServiceAccount for Grafana to use to authenticate against the user Workload Prometheus:
+1. Before we continue adding the GrafanaDataSources, we will need a ServiceAccount for Grafana to use to authenticate against Prometheus:
     ```yaml
     apiVersion: v1
     kind: ServiceAccount
@@ -142,11 +142,37 @@ Now that you have setup the service itself for monitoring, you will need to conf
       name: prometheus-reader
       namespace: coffeeshop-monitoring
     ```
-    I have found several guides online that mention giving view permission for all the resources within the cluster to this ServiceAccount but I have found this was not necessary, at least for the current stage of the coffeeshop application. This may change as the application and monitoring requirements evolve.
-1. Now that we have a ServiceAccount for Grafana to authenticate with Prometheus, we can add a GrafanaDataSource:
+1. For Grafana to get cluster metrics, it is necessary to also deploy the following ClusterRole and ClusterRoleBinding:
+  ```yaml
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRole
+  metadata:
+    name: prometheus-reader-clusterrole
+  rules:
+    - verbs:
+        - get
+      apiGroups:
+        - ''
+      resources:
+        - namespaces
+  ---
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRoleBinding
+  metadata:
+    name: prometheus-reader-clusterrolebinding
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: prometheus-reader-clusterrole
+  subjects:
+    - kind: ServiceAccount
+      name: prometheus-reader
+      namespace: coffeeshop-monitoring
+  ```
+1. Now that we have a ServiceAccount for Grafana to authenticate with Prometheus, we can add the GrafanaDataSources:
     * Retrieve the token from the ServiceAccount that we created earlier. You can navigate to the ServiceAccount in the OpenShift Console, or use the following command to get it:  
     `oc -n coffeeshop-monitoring serviceaccounts get-token prometheus-reader`
-    * Create the GrafanaDataSource and replace `[TOKEN]` with the one we got in the previous step.
+    * Create the GrafanaDataSources and replace `[TOKEN]` with the one we got in the previous step.
     ```yaml
     apiVersion: integreatly.org/v1alpha1
     kind: GrafanaDataSource
@@ -156,9 +182,10 @@ Now that you have setup the service itself for monitoring, you will need to conf
     spec:
       name: Grafana-datasources.yaml
       datasources:
+        # Cluster Monitoring
         - name: Prometheus
           type: prometheus
-          url: 'https://prometheus-operated.openshift-user-workload-monitoring.svc.cluster.local:9091/'
+          url: 'https://prometheus-operated.openshift-monitoring.svc.cluster.local:9091/'
           access: proxy
           basicAuth: false
           withCredentials: false
@@ -169,9 +196,23 @@ Now that you have setup the service itself for monitoring, you will need to conf
             tlsSkipVerify: true
           secureJsonData:
             httpHeaderValue1: "Bearer [TOKEN]"
+        # Monitoring Services
+        - name: Prometheus-User-Workload
+          type: prometheus
+          url: 'https://prometheus-operated.openshift-user-workload-monitoring.svc.cluster.local:9091/'
+          access: proxy
+          basicAuth: false
+          withCredentials: false
+          isDefault: false
+          editable: true
+          jsonData:
+            httpHeaderName1: "Authorization"
+            tlsSkipVerify: true
+          secureJsonData:
+            httpHeaderValue1: "Bearer [TOKEN]"
     ```
     **url**  
-    This is the local cluster url to the User Workload Prometheus service.  
+    This is the local cluster url to the respective Prometheus services.  
     **httpHeaderName1**  
     This custom header will be attached to the request that Grafana makes to Prometheus.  
     **httpHeaderValue1**  
