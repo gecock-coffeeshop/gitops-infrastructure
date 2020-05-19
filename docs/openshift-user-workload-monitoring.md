@@ -75,7 +75,7 @@ For monitoring the microservices, not much needs to be done in this repository a
 
 Confirm that the config directory for the service reflects the config within the services repository and has the updated `app-deploy.yaml` as well.
 
-If you want to visualise your metrics on Grafana with premade dashboards, then you can add the yaml for them in this repository. There is currently no example of a GrafanaDashboard for one of the microservices.
+If you want to visualise your microservice metrics on Grafana with premade dashboards, then you can add the yaml for them in this repository.
 
 Although this guide looks at monitoring your microservices, you can add any relevant ServiceMonitor or GrafanaDashboards within this repository for other components such as your applications Kafka.
 
