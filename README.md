@@ -26,6 +26,8 @@ After applying the contents of this repository, you can view the dashboard as fo
 * You should now see the 'Home Dashboard'.
 * On the top left of the screen, select the dashboard dropdown where it currently displays 'Home' and select `Kafka-Dashboard` to navigate to the coffeeshop scenario one.
 
+If you want to find more information on how monitoring is setup, there is a more in-depth guide in the docs: <a href="docs/openshift-user-workload-monitoring">OpenShift User Workload Monitoring</a>
+
 ## Uninstalling the infrastructure
 
 * `kubectl delete -k monitoring`
