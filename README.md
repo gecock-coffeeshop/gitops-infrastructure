@@ -7,6 +7,8 @@
    `kubectl apply -k operators-icpa`  
    * Empty OpenShift cluster:  
    `kubectl apply -k operators-openshift`
+
+    Note: Appsody Operator v0.5 or greater is required. If you have an earlier versino installe (e.g. from ICPA 4.1 or earlier), you must uninstall it, and install the latest version from OperatorHub.
 1. Deploy the Grafana operator from the Grafana GitHub:
    * `./deploy-grafana.sh coffeeshop-monitoring`
 1. You can check the status of the operators using the following command.
