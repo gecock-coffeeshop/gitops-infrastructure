@@ -9,5 +9,5 @@ kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3
 kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/role_binding.yaml -n $NAMESPACE
 kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/roles/service_account.yaml -n $NAMESPACE
 kubectl apply -f https://raw.githubusercontent.com/integr8ly/grafana-operator/v3.3.0/deploy/operator.yaml -n $NAMESPACE
-kubectl patch deployment grafana-operator --patch "{\"spec\": {\"template\": {\"spec\": {\"containers\": [{\"name\":\"grafana-operator\", \"args\": [\"--scan-all\"] }] }}}}" -n $NAMESPACE
+kubectl patch deployment grafana-operator --patch "{\"spec\": {\"template\": {\"spec\": {\"containers\": [{\"name\":\"grafana-operator\", \"args\": [\"--scan-all\"], \"image\": \"quay.io/integreatly/grafana-operator:v3.2.0\" }] }}}}" -n $NAMESPACE
 kubectl patch clusterrolebinding grafana-operator --patch "{\"subjects\": [{ \"kind\":\"ServiceAccount\", \"name\":\"grafana-operator\", \"namespace\":\"$NAMESPACE\"}] }"

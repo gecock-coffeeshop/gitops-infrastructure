@@ -7,11 +7,24 @@ spec:
   datasources:
     - name: Prometheus
       type: prometheus
-      url: 'https://prometheus-operated.openshift-user-workload-monitoring.svc.cluster.local:9091/'
+      url: 'https://prometheus-operated.openshift-monitoring.svc.cluster.local:9091/'
       access: proxy
       basicAuth: false
       withCredentials: false
       isDefault: true
+      editable: true
+      jsonData:
+        httpHeaderName1: "Authorization"
+        tlsSkipVerify: true
+      secureJsonData:
+        httpHeaderValue1: "Bearer [TOKEN]"
+    - name: Prometheus-User-Workload
+      type: prometheus
+      url: 'https://prometheus-operated.openshift-user-workload-monitoring.svc.cluster.local:9091/'
+      access: proxy
+      basicAuth: false
+      withCredentials: false
+      isDefault: false
       editable: true
       jsonData:
         httpHeaderName1: "Authorization"
