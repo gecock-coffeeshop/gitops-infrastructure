@@ -10,7 +10,7 @@
 
     Note: Appsody Operator v0.5 or greater is required. If you have an earlier version installed (e.g. from ICPA 4.1 or earlier), you must uninstall it, and install the latest version from OperatorHub.
 1. Deploy the Grafana operator from the Grafana GitHub:
-   * `./deploy-grafana.sh coffeeshop-monitoring`
+   * `./install-grafana.sh coffeeshop-monitoring`
 1. You can check the status of the operators using the following command.
    * `oc get csv -n coffeeshop-monitoring`
 1. Retrieve the service account token from the prometheus reader.
