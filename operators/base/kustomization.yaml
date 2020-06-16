@@ -2,4 +2,6 @@ resources:
   - namespace.yaml
   - service-binding-subscription.yaml
   - strimzi-subscription.yaml
+  - appsody-subscription.yaml
+  - pipelines-subscription.yaml
   - prometheus-reader-serviceaccount.yaml
